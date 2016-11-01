@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CPU.js</title>
+<script src="../cpu.js"></script>
+</head>
+<body></body>
+<script type="text/javascript">
+  var cpu = new CPU({ delay: 100 });
+  
+  cpu.on('data', function(value){
+    console.log('cpu rate', value);
+  });
+  
+  cpu.start();
+  
+</script>
+</html>
