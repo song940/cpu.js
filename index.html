@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Cpu.js by song940</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Cpu.js</h1>
+        <p>cpu profiling library</p>
+
+        <p class="view"><a href="https://github.com/song940/cpu.js">View the Project on GitHub <small>song940/cpu.js</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/song940/cpu.js/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/song940/cpu.js/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/song940/cpu.js">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="cpujs" class="anchor" href="#cpujs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>cpu.js</h1>
+
+<blockquote>
+<p>cpu profiling library</p>
+</blockquote>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> cpu <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">CPU</span>({ delay<span class="pl-k">:</span> <span class="pl-c1">100</span> });
+
+<span class="pl-smi">cpu</span>.<span class="pl-en">on</span>(<span class="pl-s"><span class="pl-pds">'</span>data<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">value</span>){
+  <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>cpu rate<span class="pl-pds">'</span></span>, value);
+});
+
+<span class="pl-smi">cpu</span>.<span class="pl-c1">start</span>();</pre></div>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/song940">song940</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>

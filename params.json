@@ -1,0 +1,6 @@
+{
+  "name": "Cpu.js",
+  "tagline": "cpu profiling library",
+  "body": "# cpu.js\r\n\r\n> cpu profiling library\r\n\r\n```js\r\nvar cpu = new CPU({ delay: 100 });\r\n\r\ncpu.on('data', function(value){\r\n  console.log('cpu rate', value);\r\n});\r\n\r\ncpu.start();\r\n```",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
