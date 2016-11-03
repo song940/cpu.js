@@ -4,12 +4,59 @@
 <meta charset="utf-8">
 <title>CPU.js</title>
 <script src="../cpu.js"></script>
+<style>
+.particle{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: white;
+}
+</style>
 </head>
-<body></body>
+<body>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+</body>
+<script>
+  ;(function(particles){
+    
+    (function update(){
+      [].slice.call(particles).forEach(function(particle, i){
+        particle.style.top = (i * 50) + 'px';
+        particle.style.left = ((Math.sin(Date.now() / 300 + i) + 1) * 300) + 'px';
+      });
+      requestAnimationFrame(arguments.callee);
+      // setTimeout(arguments.callee);
+    })();
+    
+  })(document.getElementsByClassName('particle'));
+  
+</script>
 <script type="text/javascript">
   var cpu = new CPU({ delay: 100 });
   
-  cpu.on('data', function(value){
+  cpu.on('rate', function(value){
     console.log('cpu rate', value);
   });
   

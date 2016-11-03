@@ -19,13 +19,24 @@ function CPU(options){
  * @return {[type]} [description]
  */
 CPU.prototype.start = function () {
-  var prev = new Date, now, diff, self = this;
-  this.timer = setInterval(function(){
+  var self = this;
+  this.data = [];
+  var prev = new Date, now, diff;
+  ;(function update(){
     now = new Date;
-    diff = now - prev;
+    self.data.push(now - prev - 100);
     prev = now;
-    self.emit('data', diff);
-  }, this.options.delay);
+    self.timer = setTimeout(update, self.options.delay);
+    if(self.data.length >= 10){
+      var sum = self.data.reduce(function(a, b){
+        return a + b;
+      });
+      
+      var avg = sum / self.data.length;
+      self.emit('rate', avg * 10)
+      self.data = [];
+    }
+  })();
 };
 
 /**
@@ -33,7 +44,7 @@ CPU.prototype.start = function () {
  * @return {[type]} [description]
  */
 CPU.prototype.stop = function () {
-  clearInterval(this.timer);
+  clearTimeout(this.timer);
 };
 
 /**
